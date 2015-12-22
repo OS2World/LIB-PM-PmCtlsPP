@@ -1,0 +1,17 @@
+.\pmctlspp.obj: \
+    .\pmctlspp.h \
+    .\pmctlspp.c
+
+.\BtnDlgProc.obj: \
+    .\pmctlspp.h \
+    .\BtnDlgProc.c
+
+.\ComboDlgProc.obj: \
+    .\pmctlspp.h \
+    .\ComboDlgProc.c
+
+.\EntryDlgProc.obj: \
+    .\pmctlspp.h \
+    .\EntryDlgProc.c
+
+
