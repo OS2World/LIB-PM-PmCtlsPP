@@ -57,8 +57,6 @@
 /*******************************************************************\
   type definitions an function prototypes
 \*******************************************************************/
-int _rmem_init (void);
-int _rmem_term (void);
 unsigned long _System _DLL_InitTerm (unsigned long hModule, unsigned long ulFlag);
 
 ULONG RegisterPublicWindowClasses (VOID);
@@ -72,7 +70,7 @@ HMODULE hModule = NULLHANDLE;
 /*******************************************************************\
   global data segment
 \*******************************************************************/
-#pragma data_seg(GLOBAL_SEG)
+#pragma data_seg("GLOBAL_SEG")
 
 BOOL  bIsRegistered = FALSE;
 
@@ -176,11 +174,9 @@ BOOL CheckEnvironment (VOID)
     Return: 0:       unsuccessul
             other:   successul
 \*******************************************************************/
-#pragma linkage (_DLL_InitTerm, system)
-unsigned long _DLL_InitTerm (unsigned long hModule, unsigned long ulFlag)
+unsigned long _System _DLL_InitTerm (unsigned long hModule, unsigned long ulFlag)
     {
     static BOOL bIsInitialized = FALSE;
-    size_t      i;
 
     switch (ulFlag)
         {
@@ -190,7 +186,6 @@ unsigned long _DLL_InitTerm (unsigned long hModule, unsigned long ulFlag)
             /* are not inlined.                                          */
             if (!bIsInitialized)
                 {
-                _rmem_init ();
                 bIsInitialized = TRUE;
                 }
 
@@ -202,7 +197,6 @@ unsigned long _DLL_InitTerm (unsigned long hModule, unsigned long ulFlag)
             break;
 
         case 1:         // termination
-            _rmem_term ();
             break;
 
         default:
@@ -271,5 +265,3 @@ ULONG RegisterPublicWindowClasses (VOID)
     // return 1 if at least 1 class was registered
     return rc ? 1 : 0;
     }
-
-

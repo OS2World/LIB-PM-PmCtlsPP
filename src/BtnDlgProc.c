@@ -18,7 +18,7 @@
 /*******************************************************************\
   global data segment
 \*******************************************************************/
-#pragma data_seg(GLOBAL_SEG)
+#pragma data_seg("GLOBAL_SEG")
 
 /*******************************************************************************\
  *      Button Window Procedure                                                *
@@ -74,7 +74,6 @@ VOID BtnControl (HWND hwnd, MPARAM mp1, MPARAM mp2)
     {
     HPS     hPS;
     RECTL   rectl;
-    HAB     hab;
     HBITMAP hbm;
     POINTL  aptl[4];
     BITMAPINFOHEADER2 bmpInfo;
@@ -123,8 +122,6 @@ BOOL BtnPaint (HWND hwnd)
     {
     HPS     hPS;
     RECTL   rectl;
-    HAB     hab;
-    HLIB    hLib;
     HBITMAP hbm;
     POINTL  aptl[4];
     BITMAPINFOHEADER2 bmpInfo;

@@ -2,6 +2,42 @@
 #define PMCTLSPP_H
 
 /*******************************************************************\
+  Compiler compatibility macros
+\*******************************************************************/
+#if defined(__WATCOMC__)
+  #define EXPENTRY    _System
+  #define APIENTRY    _System
+  #define _Optlink    _Optlink
+  #define _System     _System
+  #define _cdecl      _cdecl
+  #define _stdcall    _stdcall
+  #define PASCAL      _System
+  #ifndef FAR
+  #define FAR         far
+  #endif
+  #ifndef NEAR
+  #define NEAR        near
+  #endif
+  #define EXPORT      __export
+#elif defined(__IBMC__) || defined(__IBMCPP__)
+  /* IBM Visual Age C++ - keep existing definitions */
+  #ifndef EXPENTRY
+  #define EXPENTRY    _System
+  #endif
+  #ifndef APIENTRY
+  #define APIENTRY    _System
+  #endif
+#else
+  /* Generic fallback */
+  #ifndef EXPENTRY
+  #define EXPENTRY
+  #endif
+  #ifndef APIENTRY
+  #define APIENTRY
+  #endif
+#endif
+
+/*******************************************************************\
   type definitions an function prototypes
 \*******************************************************************/
 typedef struct _STRUCTCLASS
@@ -34,4 +70,3 @@ extern PFNWP pfnwpOldEntryFieldWndProc;
 extern PFNWP pfnwpOldComboBoxWndProc;
 
 #endif /* PMCTLSPP_H */
-

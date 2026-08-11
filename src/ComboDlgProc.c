@@ -56,7 +56,7 @@
 /*******************************************************************\
   global data segment
 \*******************************************************************/
-#pragma data_seg(GLOBAL_SEG)
+#pragma data_seg("GLOBAL_SEG")
 
 ULONG ulcWindowData;
 

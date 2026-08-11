@@ -1,0 +1,22 @@
+#include <os2.h>
+#include "PmCtlsTest.h"
+
+DLGTEMPLATE IDD_MAIN LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG "PmCtlsPP Test", IDD_MAIN, 20, 20, 300, 165, 0,
+           FCF_TITLEBAR | FCF_SYSMENU | FCF_DLGBORDER | FCF_CLOSEBUTTON
+    BEGIN
+        LTEXT "PMCTLSPP=", -1, 10, 148, 62, 10
+        LTEXT "(not set)", IDC_STATUS, 74, 148, 216, 10
+
+        LTEXT "Entry field  (double-click selects one word):", -1, 10, 128, 280, 10
+        ENTRYFIELD "The quick brown fox jumps over the lazy dog", IDC_EF,
+                   10, 115, 280, 12, ES_AUTOSCROLL | WS_TABSTOP
+
+        LTEXT "Combo box  (click field to toggle list):", -1, 10, 97, 280, 10
+        COMBOBOX "", IDC_CB, 10, 40, 200, 57, CBS_DROPDOWN | WS_VISIBLE | WS_TABSTOP
+
+        PUSHBUTTON "Click Me", IDC_TESTBTN, 10, 10, 70, 14
+        DEFPUSHBUTTON "Close", DID_OK, 240, 10, 50, 14
+    END
+END

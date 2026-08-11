@@ -1,0 +1,193 @@
+** EXPERIMENTAL (HLL) ** Open Watcom Linker Version 2.0.1
+Portions Copyright (c) 1985-2002 Sybase, Inc. All Rights Reserved.
+Created on:       26/08/10 23:24:45
+Executable Image: PmCtlsTest.exe
+creating an OS/2 32-bit Presentation Manager executable
+
+
+                        +------------+
+                        |   Groups   |
+                        +------------+
+
+Group                           Address              Size
+=====                           =======              ====
+
+DGROUP                          0002:00000000        00010300
+
+
+
+                        +--------------+
+                        |   Segments   |
+                        +--------------+
+
+Segment                Class          Group          Address         Size
+=======                =====          =====          =======         ====
+
+BEGTEXT                CODE           AUTO           0001:00000000   00000007
+_TEXT                  CODE           AUTO           0001:00000010   00000810
+_NULL                  BEGDATA        DGROUP         0002:00000000   00000004
+_AFTERNULL             BEGDATA        DGROUP         0002:00000004   00000000
+CONST                  DATA           DGROUP         0002:00000004   00000140
+CONST2                 DATA           DGROUP         0002:00000144   00000000
+_DATA                  DATA           DGROUP         0002:00000144   00000098
+TIB                    DATA           DGROUP         0002:000001dc   00000000
+TI                     DATA           DGROUP         0002:000001dc   00000000
+TIE                    DATA           DGROUP         0002:000001dc   00000000
+XIB                    DATA           DGROUP         0002:000001dc   00000000
+XI                     DATA           DGROUP         0002:000001dc   00000000
+XIE                    DATA           DGROUP         0002:000001dc   00000000
+YIB                    DATA           DGROUP         0002:000001dc   00000000
+YI                     DATA           DGROUP         0002:000001dc   00000000
+YIE                    DATA           DGROUP         0002:000001dc   00000000
+DATA                   DATA           DGROUP         0002:000001dc   00000000
+_BSS                   BSS            DGROUP         0002:000001dc   00000118
+STACK                  STACK          DGROUP         0002:00000300   00010000
+
+
+                        +----------------+
+                        |   Memory Map   |
+                        +----------------+
+
+* = unreferenced symbol
++ = symbol only referenced locally
+
+Address        Symbol
+=======        ======
+
+Module: PmCtlsTest.obj(D:\SWtest\LIB-PM-PmCtlsPP\sample\PmCtlsTest\PmCtlsTest.c)
+0001:00000290  main_
+0002:000001dc+ _hab
+Module: C:\WATCOM/lib386/os2\clib3r.lib(cstart)
+0001:000003be  _cstart_
+Module: C:\WATCOM/lib386/os2\clib3r.lib(main2o32.c)
+0001:00000420  __OS2Main
+Module: C:\WATCOM/lib386/os2\clib3r.lib(segdefns)
+0001:00000003  ___begtext
+0002:00000000* __nullarea
+0002:000001dc  __Start_XI
+0002:000001dc  __End_XI
+0002:000001dc  __Start_YI
+0002:000001dc  __End_YI
+Module: C:\WATCOM/lib386/os2\clib3r.lib(initrtns.c)
+0001:000004a0  __InitRtns
+0001:000004f0  __FiniRtns
+Module: C:\WATCOM/lib386/os2\clib3r.lib(mthrdini.c)
+0001:00000550  __InitThreadData_
+0002:00000144  ___ThreadDataSize
+Module: C:\WATCOM/lib386/os2\clib3r.lib(memset.c)
+0001:00000570  memset_
+Module: C:\WATCOM/lib386/os2\clib3r.lib(maino32.c)
+0002:00000148+ ___FirstThreadData
+0002:0000014c+ ___GetThreadPtr
+0002:00000150* __AccessFileH
+0002:00000154* __ReleaseFileH
+0002:00000158* __AccessIOB
+0002:0000015c* __ReleaseIOB
+0002:00000160* __AccessNHeap
+0002:00000164* __AccessFHeap
+0002:00000168* __ReleaseNHeap
+0002:0000016c* __ReleaseFHeap
+0001:0000058e  __threadstack_
+0001:00000595* __threadid_
+0001:0000059c  __OS2MainInit_
+0001:0000060b+ __OS2Init_
+0001:00000649* __OS2Fini_
+0001:00000651* __shutdown_stack_checking_
+0001:00000666  __exit_
+0002:00000170* __AccessTDList
+0002:00000174* __ReleaseTDList
+0002:00000178+ ___sig_init_rtn
+0002:0000017c* ___sig_fini_rtn
+0002:00000180* __threadstksize
+0002:00000184  ___process_fini
+0002:000001e0  ___Is_DLL
+0002:000001e4+ ___saved_CS
+Module: C:\WATCOM/lib386/os2\clib3r.lib(cmain386.c)
+0001:000006b0  __CMain
+Module: C:\WATCOM/lib386/os2\clib3r.lib(dosseg)
+0000:00001234  __DOSseg__
+Module: C:\WATCOM/lib386/os2\clib3r.lib(__stos)
+0001:000006f0  __STOSB
+0001:00000727* __STOSD
+Module: C:\WATCOM/lib386/os2\clib3r.lib(crwdata)
+0002:000001ca  __osmajor
+0002:000001cb  __osminor
+0002:00000198* __LpDllName
+0002:0000019c* __LpwCmdLine
+0002:000001a0* __LpwPgmName
+0002:000001a4* __LpwDllName
+0002:00000190  __LpCmdLine
+0002:00000194  __LpPgmName
+0002:00000188* __dynend
+0002:0000018c* __curbrk
+0002:000001a8* __STACKLOW
+0002:000001ac* __STACKTOP
+0002:000001b0  __ASTACKSIZ
+0002:000001b4  __ASTACKPTR
+0002:000001b8* __cbyte
+0002:000001bc* __cbyte2
+0002:000001c0* __child
+0002:000001c6  __Envptr
+0002:000001c4* __no87
+0002:000001cc* ___FPE_handler
+Module: C:\WATCOM/lib386/os2\clib3r.lib(cinit.c)
+0001:000007a0  __CommonInit_
+0002:000002e8  ___hmodule
+Module: C:\WATCOM/lib386/os2\clib3r.lib(___argc.c)
+0002:000002ec  ____Argc
+0002:000002f0  ____Argv
+Module: C:\WATCOM/lib386/os2\clib3r.lib(exit.c)
+0001:000007b0+ __null_int23_exit_
+0001:000007b1  exit_
+0001:00000801* _exit_
+0002:000001d0+ ___int23_exit
+0002:000001d4+ ___FPE_handler_exit
+Module: C:\WATCOM/lib386/os2\clib3r.lib(amblksiz.c)
+0002:000001d8  __amblksiz
+
+
+                        +----------------------+
+                        |   Imported Symbols   |
+                        +----------------------+
+
+Symbol                              Module
+======                              ======
+
+DosScanEnv                          DOSCALLS
+WinCreateWindow                     PMWIN
+WinSendMsg                          PMWIN
+WinMessageBox                       PMWIN
+WinPostMsg                          PMWIN
+WinDefWindowProc                    PMWIN
+WinInitialize                       PMWIN
+WinCreateMsgQueue                   PMWIN
+_PM_Init                            pmctlspp.dll
+WinRegisterClass                    PMWIN
+WinCreateStdWindow                  PMWIN
+WinSetWindowPos                     PMWIN
+WinGetMsg                           PMWIN
+WinDispatchMsg                      PMWIN
+WinTerminate                        PMWIN
+WinDestroyWindow                    PMWIN
+WinDestroyMsgQueue                  PMWIN
+DosQuerySysInfo                     DOSCALLS
+DosExit                             DOSCALLS
+
+
+                        +--------------------+
+                        |   Libraries Used   |
+                        +--------------------+
+
+..\..\lib\pmctlspp.lib
+C:\WATCOM/lib386/os2\clib3r.lib
+C:\WATCOM/lib386/os2\os2386.lib
+
+
+                        +-----------------------+
+                        |   Linker Statistics   |
+                        +-----------------------+
+
+Stack size:  00010000 (65536.)
+Memory size:  00010b20 (68384.)
+Entry point address: 0001:000003be
+Link time: 00:00.67
