@@ -7,6 +7,8 @@ toggles the drop-down list, and push buttons can use an extended drawing
 procedure.  Activation is opt-in per class via an environment variable, so
 existing applications are unaffected unless they call `_PM_Init()`.
 
+![PmCtlsPP ScreenShot](/doc/PmCtlsPP.png)
+
 ## Version
 
 1.1
